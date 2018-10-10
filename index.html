@@ -4,6 +4,7 @@
 <head>
   <title>RPS Game</title>
   <!-- Link CSS here -->
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway" rel="stylesheet">
   <link type='text/css' rel='stylesheet' href='css/style.css' />
 </head>
 
@@ -20,12 +21,11 @@
      -->
   <div class="row">
       <h1>Rock Paper Scissors</h1>
-      <img src="http://www.coltnews.com/wp-content/uploads/2016/04/RPS.png">
-
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/300px-Rock-paper-scissors.svg.png">
       <h3>Please Submit Your Choice Below</h3>
       <div>
-        <input id="input">
-        <button id="shoot">Shoot!</button>
+        <input id="input" placeholder="Rock, Paper, Scissors...">
+        <button id="shoot" >Shoot!</button>
       </div>
 
       <div id="choices" class="row">
@@ -38,7 +38,11 @@
           <p id="computerChoice"></p>
         </div>
       </div>
-      <div id="result"></div>
+      <div id="results">
+        <div id="result">
+          <h4> Who wins:</h4>
+        </div>
+      </div>
   </div>
 
   <!-- Link JQuery here -->

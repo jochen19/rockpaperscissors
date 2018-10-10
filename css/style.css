@@ -2,8 +2,21 @@
   text-align:center;
   
 }
+
 #choices{
   display:flex;
-  justify-content:space-between;
-  
+  justify-content:space-around;
+  padding-bottom: 40px;
+}
+
+#userChoice{
+  color: #ff69b4;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
+
+#computerChoice{
+  color: #BDB76B;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
 }
