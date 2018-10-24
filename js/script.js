@@ -12,10 +12,12 @@ $(document).ready(function(){
     var userChoice = "";
     var computerChoice = "";
     var winner = "";
+    var userScore = 0;
+    var computerScore = 0;
     var randomNumber = 0;
     $("#shoot").click(function(){
         randomNumber = Math.random();
-        userChoice = $("#input").val();
+        userChoice = $("#input").val().toLocaleLowerCase();
         
         $("#userChoice").text(userChoice); 
         
@@ -29,12 +31,46 @@ $(document).ready(function(){
         
         $("#computerChoice").text(computerChoice);
         
-        if (userChoice === "rock" && computerChoice === "rock"){
-            $("#winner").text("Draw");
-        } else if (userChoice === "paper" && computerChoice === "rock"){
-            $("#winner").text("User");
-        } else if (userChoice === "scissors" && computerChoice === "rock"){
-            $("#winner").text("Computer");
+        if (userChoice === "rock"){
+            if (computerChoice === "rock"){
+                $("#winner").text("Draw");
+            } else if (computerChoice === "paper"){
+                $("#winner").text("Computer");
+                winner = "computer";
+            } else if (computerChoice === "scissors"){
+                $("#winner").text("User");
+                winner = "user";
+            }
+        } else if (userChoice === "paper"){
+            if (computerChoice === "rock"){
+                $("#winner").text("User");
+                winner = "user";
+            } else if (computerChoice === "paper"){
+                $("#winner").text("Draw");
+            } else if (computerChoice === "scissors"){
+                $("#winner").text("Computer");
+                winner = "computer";
+            }
+        } else if (userChoice === "scissors"){
+            if (computerChoice === "rock"){
+                $("#winner").text("Computer");
+                winner = "computer";
+            } else if (computerChoice === "paper"){
+                $("#winner").text("User");
+                winner = "user";
+            } else if (computerChoice === "scissors"){
+                $("#winner").text("Draw");
+            }
+        } else {
+            $("#winner").text("Invalid Input");
+        }
+        
+        if (winner === "user"){
+            userScore = userScore + 1;
+            $("#userScore").text(userScore);
+        } else if (winner === "computer"){
+            computerScore = computerScore + 1;
+            $("#computerScore").text(computerScore);
         }
     });
 });
